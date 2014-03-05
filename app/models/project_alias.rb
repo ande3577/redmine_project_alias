@@ -3,7 +3,7 @@ class ProjectAlias < ActiveRecord::Base
 
   ALIAS_MAX_LENGTH = 100
 
-  has_one :project
+  belongs_to :project
   validates_presence_of :project, :alias
   validates_uniqueness_of :alias
   validates_length_of :alias, :in => 1..ALIAS_MAX_LENGTH

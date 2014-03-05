@@ -22,6 +22,12 @@ class ProjectAliasTest < ActiveSupport::TestCase
     check_invalid_alias(@project.identifier)
   end
 
+  def test_destroy_alias
+    assert_difference ['Project.count'], 0 do
+      @project_alias.destroy()
+    end
+  end
+
   def setup
     @project = Project.first
     @project_alias = ProjectAlias.new(:project => @project, :alias => 'project_alias')

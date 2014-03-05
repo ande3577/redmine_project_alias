@@ -1,3 +1,5 @@
+require_dependency 'project_alias_project_patch'
+
 Redmine::Plugin.register :redmine_project_alias do
   name 'Redmine Project Alias plugin'
   author 'David S Anderson'
