@@ -1,4 +1,6 @@
 require_dependency 'project_alias_project_patch'
+require_dependency 'project_alias_project_hooks'
+
 
 Redmine::Plugin.register :redmine_project_alias do
   name 'Redmine Project Alias plugin'

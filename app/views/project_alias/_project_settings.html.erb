@@ -1,0 +1,9 @@
+
+<%if User.current.allowed_to?(:edit_project, @project) %>
+  <p><%= label_tag(l(:project_alias_alias_plural)) %>
+  <% @project.project_aliases.each do |a| %>
+    <%= a.alias %>
+    <p>
+  <% end %>
+  <%= link_to l(:project_alias_label_new), { :controller => :aliases, :action => :new, :project_id => @project.identifier } , :class => 'icon icon-add' %>
+<% end %>
