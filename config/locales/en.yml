@@ -1,3 +1,5 @@
 # English strings go here for Rails i18n
 en:
   # my_label: "My label"
+  project_alias_alias: "Alias"
+  project_alias_create: "Create project alias"

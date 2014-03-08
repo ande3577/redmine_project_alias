@@ -1,1 +1,15 @@
-<h2>AliasesController#new</h2>
+<h2><%= l(:project_alias_create)%></h2>
+
+<% if @project_alias.errors.any? %>
+    <div id='errorExplanation'><ul>
+    <% @project_alias.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul></div>
+<% end %>
+
+<%= form_tag :controller => :aliases, :action => :create, :method => :post do %>
+  <p><%= label_tag(:alias, l(:project_alias_alias)) %>
+  <%= text_field(:project_alias, :alias) %>
+  <p><%= submit_tag %>
+<% end %>
