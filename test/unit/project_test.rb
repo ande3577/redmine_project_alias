@@ -31,4 +31,22 @@ class ProjectTest < ActiveSupport::TestCase
     assert_equal @project, Project.find(@alias.alias) 
   end
 
+  def test_default_alias_sets_identifier
+    assert set_default_alias
+    assert_equal @alias.alias, @project.identifier
+  end
+
+  def test_default_alias_still_allows_finding_via_identifier
+    set_default_alias
+    assert_equal @project, Project.find(@project.identifier)
+  end
+
+
+  def set_default_alias
+    @project.default_alias = @alias
+    success = @project.save
+    @project.reload
+    success
+  end
+
 end

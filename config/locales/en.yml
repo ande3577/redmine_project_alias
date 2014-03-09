@@ -4,4 +4,5 @@ en:
   project_alias_alias: "Alias"
   project_alias_create: "Create project alias"
   project_alias_alias_plural: "Project Aliases"
-  project_alias_label_new: "Create a new project alias"
+  project_alias_label_new: "Create a new project alias" 
+  field_default_alias: "Default Alias"
