@@ -7,7 +7,7 @@ project can be accessed using the project alias instead of the project
 identifier.  It is a workaround for the inability to change a projects 
 identifier after creation.
 
-It is written for Redmine 2.5.x, other versions may or may not work.
+It is compatible with versions 2.4.x and 2.5.x.  Other versions may or may not work.
 
 Please report issues to: 
   https://github.com/ande3577/redmine_project_alias/issues
