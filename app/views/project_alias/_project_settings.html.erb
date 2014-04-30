@@ -1,13 +1,14 @@
+<% unless @project.new_record? %>
+  <%if User.current.allowed_to?(:edit_project, @project) %>
+    <p><%= label_tag(l(:project_alias_alias_plural)) %>
+    <% @project.project_aliases.each do |a| %>
+      <%= a.alias %>
+      <p>
+    <% end %>
+    <%= link_to l(:project_alias_label_new), { :controller => :aliases, :action => :new, :project_id => @project.identifier } , :class => 'icon icon-add' %>
 
-<%if User.current.allowed_to?(:edit_project, @project) %>
-  <p><%= label_tag(l(:project_alias_alias_plural)) %>
-  <% @project.project_aliases.each do |a| %>
-    <%= a.alias %>
-    <p>
-  <% end %>
-  <%= link_to l(:project_alias_label_new), { :controller => :aliases, :action => :new, :project_id => @project.identifier } , :class => 'icon icon-add' %>
-
-  <% if @project.project_aliases.any? %>
-    <p><%= form.select(:default_alias_id, options_from_collection_for_select(@project.project_aliases, :id, :alias, @project.default_alias_id), :include_blank => 'None' ) %>
+    <% if @project.project_aliases.any? %>
+      <p><%= form.select(:default_alias_id, options_from_collection_for_select(@project.project_aliases, :id, :alias, @project.default_alias_id), :include_blank => 'None' ) %>
+    <% end %>
   <% end %>
 <% end %>
